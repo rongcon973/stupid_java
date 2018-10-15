@@ -5,30 +5,30 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 public class Stupid {
     public static void main(String[] arg)   {        
-        int result = hohoho(arg);
+        int result = myFun(arg);
         System.exit(result);
     }
-    public static int hohoho(String arr[]) {
+    public static int myFun(String arr[]) {
         try{
             if(arr.length != 2) 
                 return -1;
-            String bbb,ddd= new String(Files.readAllBytes(Paths.get(arr[1]))); 
-            bbb= new String(Files.readAllBytes(Paths.get(arr[0])));
-            int size = bbb.length();
+            String file1,file2= new String(Files.readAllBytes(Paths.get(arr[1]))); 
+            file1 = new String(Files.readAllBytes(Paths.get(arr[0])));
+            int size = file1.length();
             if(size<4) 
                 return -2;
             int RRR=0; float eee=0;
-            for(int aaa=0;aaa<size-3;aaa++)
+            for(int i=0;i<size-3;i++)
             {       
-                for(int qqq=0;qqq<ddd.length()-4;qqq+=1) {
+                for(int j=0;j<file2.length()-4;j+=1) {
                     int vOv = 0;
                     for(int CC=0;CC<4;CC++){
-                        if(bbb.charAt(aaa+CC) == ddd.charAt(qqq+CC)) 
+                        if(file1.charAt(i+CC) == file2.charAt(j+CC)) 
                             vOv ++;
                     }          
             if (vOv == 4)
             {
-                System.out.println("DEBUG:".concat(String.valueOf(aaa) + "," + String.valueOf(qqq)));
+                System.out.println("DEBUG:".concat(String.valueOf(i) + "," + String.valueOf(j)));
                 RRR++; 
                 eee+=1;
             }
